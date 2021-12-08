@@ -1,0 +1,157 @@
+/*     1) Print version  */
+@media print {
+    img[alt="epam-mexico"] {
+        width: 60%;
+        margin: 25% 10% 6%;
+        float: right;
+        padding-right: 0px;
+    }
+
+    #home, section > .tm-content-box.flex-2-col, footer {
+        visibility: visible;
+    }
+
+    body nav:first-of-type, #about, .heading, .blocks, #ideas, section.tm-content-box {
+        display: none;
+    }
+
+    h2 {
+        color: blue !important;
+    }
+
+    .tm-content-box > .tm-team-description-container {
+        padding-top: 0%;
+    }
+}
+
+@media screen {
+    img[alt="epam-mexico"] {
+        width: 100%;
+        float: right;
+    }
+
+    .tm-content-box > .tm-team-description-container {
+        padding-top: 15%;
+    }
+
+    /*     5) Add triangle to each section on the page using pseudo elements. */
+    section::before {
+        content: "";
+        border-right: 260px solid transparent;
+        border-left: 0px solid #87cefa;
+        border-top: 35px solid #87cefa;
+    }
+    /*     4) Add box shadow to navigation and each content block. Add grey border to the banner*/
+    .tm-content-box, nav {
+        box-shadow: 1px 1px 5px 2px grey;
+    }
+
+    div.tm-banner-inner {
+        outline: rgba(211, 211, 211, 0.39) solid 2em;
+    }
+
+}
+
+.tm-content-box.flex-2-col {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-item {
+    width: 55%;
+}
+
+
+/*     2) Tiles with text should have hover effect  */
+
+li > .tm-section-title:hover {
+    background-color: #87CEFA;
+    color: white;
+}
+
+
+/*     3) Change color of first letter in each paragraphs to lightskyblue and font size to 30px.  */
+p:first-letter {
+    text-transform: capitalize;
+    color: #87CEFA;
+    font-size: 30px;
+
+}
+
+/*6)    Change color of ‘How We Do It’ to gainsboro and add letter spacing 5px.*/
+section.blocks > div > .tm-section-title:first-of-type {
+    color: gainsboro;
+    letter-spacing: 5px;
+}
+
+/*7)    Each first paragraph which placed after h2 tag should have italic font style.*/
+h2 ~ p:first-of-type {
+    font-style: italic;
+}
+
+/*8)    Text in the paragraph should look like in Figure 7. */
+/*(vertical space between lines is increased, there is some free space at the start of the first line).*/
+section:first-of-type > .tm-content-box .tm-section-description {
+    text-indent: 2em;
+    line-height: 2em;
+}
+
+/*     9) Apply the following styles in “We are” section: */
+.heading a:link {
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid;
+    border-bottom-color: white;
+}
+
+.heading a:visited {
+    color: black;
+    border-bottom-color: black;
+}
+
+.heading a:hover {
+    border-bottom-color: white;
+    color: #2aabd2;
+    text-decoration: double underline;
+}
+
+.heading a.text::after {
+    color: red;
+    vertical-align: super;
+    font-size: smaller;
+    content: "New";
+}
+
+/*10)   Add layout and styles for following block.*/
+
+.box-work {
+    padding: 10px;
+}
+
+.box-work:nth-child(2), .box-work:nth-child(4), .box-work:nth-child(6) {
+    background-color: lightgray;
+}
+
+/*11)   Change submit button styles. Add asterisk to email field (Figure 11 and Figure 12).*/
+.mandatory-field:after {
+    content: " *";
+    color: red;
+    display: inline;
+}
+
+.btn {
+    background-color: white;
+    color: #87CEFA;
+    border: 1px solid #87CEFA;
+}
+
+.btn:hover {
+    background-color: rgba(135, 206, 250, 0.63);
+    border: 1px solid #87CEFA;
+}
+
+
+/*12) Add hover effect for navigation items (grey background) (Figure 13).*/
+.tm-nav-item:hover {
+    background-color: rgba(211, 211, 211, 0.39);
+}
