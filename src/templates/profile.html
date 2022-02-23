@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{{ url_for('static', filename='stylesheets/styles.css') }}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            {% if current_user.is_admin %}
+            <li><a href="/users">Users</a></li>
+            <li><a href="/wallets">Wallets</a></li>
+            {% endif %}
+            {% if current_user.is_authenticated %}
+            <li><a href="/transactionsPost">Transactions</a></li>
+            <li class="right active"><a href="/profile">Profile</a></li>
+            {% endif %}
+            {% if current_user.is_authenticated == False %}
+            <li class="right"><a href="/login">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+<main class="content">
+    <div class="profile">
+    <h2>Profile Information</h2>
+    <p>Username: {{user.username}}</p>
+    <p>First Name: {{user.first_name}}</p>
+    <p>Last Name: {{user.last_name}}</p>
+    <p>Email: {{user.email}}</p>
+
+
+    {% if current_user.is_authenticated %}
+    <button><a href="editUser/{{user['username']}}">Edit profile</a></button>
+    <button><a href="logout">Logout</a></button>
+    </div>
+    {% for wallet in wallets %}
+
+    <div class="wallet inProfile">
+        <h1>Wallet Name: {{wallet.name}}</h1>
+        <p>Your card number: {{wallet.uid}}</p>
+        <p>Money: {{wallet.funds}}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+</main>
+<footer>
+
+</footer>
+</body>
+</html>

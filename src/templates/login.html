@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{{ url_for('static', filename='stylesheets/styles.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='stylesheets/login.css') }}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            {% if current_user.is_admin %}
+            <li><a href="/users">Users</a></li>
+            <li><a href="/wallets">Users</a></li>
+            {% endif %}
+            {% if current_user.is_authenticated %}
+            <li><a href="/transactionsPost">Transactions</a></li>
+            <li class="right"><a href="/profile">Profile</a></li>
+            {% endif %}
+            {% if current_user.is_authenticated == False %}
+            <li class="right active"><a href="/login">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+<main >
+    <div id="login">
+        <div class="center" >
+            <h1>Login</h1>
+
+            <form method="POST" action="/login">
+                <div>
+                    <input type="text" name="username" placeholder="Your username" autofocus="">
+                </div>
+                <div>
+                    <input type="password" name="password" placeholder="Your Password">
+                </div>
+                <div class="center">
+                    <button>Login</button>
+                </div>
+            </form>
+            {% if current_user.is_authenticated == False %}
+            <p>Don't have account? <a href="register">Register</a></p>
+            {% endif %}
+        </div>
+    </div>
+
+</main>
+<footer>
+
+</footer>
+</body>
+</html>

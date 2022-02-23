@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{{ url_for('static', filename='stylesheets/styles.css') }}" rel="stylesheet">
+    <!--    <link href="/src/static/stylesheets/styles.css" rel="stylesheet">-->
+</head>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            {% if current_user.is_admin %}
+            <li><a href="/users">Users</a></li>
+            <li><a href="/wallets">Wallets</a></li>
+            {% endif %}
+            {% if current_user.is_authenticated %}
+            <li class="active"><a href="/transactionsPost">Transactions</a></li>
+            <li class="right"><a href="/profile">Profile</a></li>
+            {% endif %}
+            {% if current_user.is_authenticated == False %}
+            <li class="right"><a href="/login">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+<body>
+<main class="content center">
+    <h1>CREATE TRANSACTION</h1>
+    <form method="post">
+        <div>
+            <label>Please, enter your card number: </label>
+            <input type="text" name="from_wallet_id"
+                   placeholder="Card number" class="form-control">
+        </div>
+        <div>
+            <label>Please, enter the receiver`s card number: </label>
+            <input type="text" name="to_wallet_id"
+                   placeholder="Card number" class="form-control">
+        </div>
+        <div>
+            <label>Please, enter amount of money you want to send: </label>
+            <input type="text" name="amount"
+                   placeholder="Amount" class="form-control">
+            <div class="center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+    <p><a href="transactions">See all Transactions</a></p>
+</main>
+</body>
+</html>

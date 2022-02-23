@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{{ url_for('static', filename='stylesheets/styles.css') }}" rel="stylesheet">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            {% if current_user.is_admin %}
+            <li><a href="/users">Users</a></li>
+            <li class="active"><a href="/wallets">Wallets</a></li>
+            {% endif %}
+            {% if current_user.is_authenticated %}
+            <li><a href="/transactionsPost">Transactions</a></li>
+            <li class="right"><a href="/profile">Profile</a></li>
+            {% endif %}
+            {% if current_user.is_authenticated == False %}
+            <li class="right"><a href="/login">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+<main class="content center">
+    <h1 class="title">CREATE WALLET</h1>
+
+    <form method="post">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name"
+                   placeholder="Name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Funds</label>
+            <input type="text" name="funds"
+                   placeholder="Post funds" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Owner Id</label>
+            <input type="text" name="owner_id"
+                   placeholder="Post owner_id" class="form-control">
+        </div>
+        <div class="form-group center">
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </form>
+</main>
+</body>
+</html>

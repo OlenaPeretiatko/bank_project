@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{{ url_for('static', filename='stylesheets/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            {% if current_user.is_admin %}
+            <li><a href="/users">Users</a></li>
+            <li class="active"><a href="/wallets">Wallets</a></li>
+            {% endif %}
+            {% if current_user.is_authenticated %}
+            <li><a href="/transactionsPost">Transactions</a></li>
+            <li class="right"><a href="/profile">Profile</a></li>
+            {% endif %}
+            {% if current_user.is_authenticated == False %}
+            <li class="right"><a href="/login">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+<main>
+    <a href="walletCreate">
+        <button>Add Wallet</button>
+    </a>
+
+    {% for wallet in wallets %}
+<div class="wrapper">
+    <p>Wallet uid: {{wallet.uid}}</p>
+    <p>Name: {{wallet.name}}</p>
+    <p>Funds: {{wallet.funds}}</p>
+    <p>Owner id: {{wallet.owner_id}}</p>
+    <form action="walletDelete/{{wallet.uid}}" method="POST">
+        <input type="submit" value="Delete Wallet"
+               class="btn btn-danger btn-sm">
+
+    </form>
+</div>
+    <hr>
+    {% endfor %}
+</main>
+</body>
+</html>
