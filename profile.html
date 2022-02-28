@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body id="imgProfile">
+<header id="profileHeader">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="users.html">Users</a></li>
+            <li><a href="wallets.html">Wallets</a></li>
+            <li><a href="transactionPost.html">Transactions</a></li>
+            <li class="right active"><a href="profile.html">Profile</a></li>
+            <li class="right"><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <div class="profileWrapper">
+    <div class="content">
+        <div class="profile">
+            <h2>Profile Information</h2>
+            <p>Username: {{user.username}}</p>
+            <p>First Name: {{user.first_name}}</p>
+            <p>Last Name: {{user.last_name}}</p>
+            <p>Email: {{user.email}}</p>
+
+            <form action="update.html" method="get">
+                <button>EDIT PROFILE</button>
+            </form>
+            <form action="/logout" method="post">
+                <button>Logout</button>
+            </form>
+        </div>
+    </div>
+        <div class="wallets">
+            <div class="wallet inProfile">
+                <p class="walletName">{{wallet.name}}</p>
+                <p class="cardNum">{{wallet.uid}}</p>
+                <p class="walletMoney">Money: {{wallet.funds}}</p>
+                <p class="cardUser">{{current_user.first_name}} {{current_user.last_name}}</p>
+                <p class="montserrat">VISA</p>
+            </div>
+        </div>
+
+    </div>
+</header>
+<footer class="footerWhite">
+    <hr>
+    <span class="footerText">&copy; 2022 Roman Bilets</span>
+    <nav class="navigation">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Vacancies</a>
+        <a href="#">Shop</a>
+    </nav>
+</footer>
+</body>
+</html>

@@ -1,0 +1,107 @@
+@import "variables1";
+@import "main";
+
+.wallet {
+  margin: 10px auto;
+  padding: 30px;
+  background-color: #242582;
+  color: white;
+  width: 380px;
+  height: 220px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px gray;
+  border: 1px solid black;
+}
+
+.wallet:nth-child(odd) {
+  background-color: #fd351b;
+}
+
+footer, #profileImg {
+  margin-top: 0;
+}
+
+.cardNum {
+  font: {
+    family: 'Courier New', monospace;
+    size: 25px;
+    weight: bold;
+  }
+  letter-spacing: 2px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.montserrat {
+  font: {
+    family: 'Montserrat', sans-serif;
+    style: italic;
+  }
+  height: 100px;
+  background-size: cover;
+  float: right;
+}
+
+.cardUser, .walletMoney {
+  letter-spacing: 1px;
+  font-family: 'Courier New', monospace;
+
+}
+
+.cardUser {
+  float: left;
+}
+
+.walletName {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.profile {
+  margin: 10% 7%;
+  font-size: 18px;
+  line-height: 1.8;
+  padding: 5%;
+}
+
+#profileHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+#imgProfile {
+  color: white;
+  background: linear-gradient(rgba(31, 34, 44, 0.63), rgba(26, 28, 37, 0.22)),
+  $imgProfilePage center;
+  min-height: 700px;
+  background-size: cover;
+}
+
+#imgProfile > div {
+  justify-content: center;
+  align-items: center;
+}
+
+.profileWrapper {
+  display: flex;
+}
+
+.wallets {
+  margin: 8% auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.profileWrapper > div {
+  width: 50%;
+}
+
+.userWrapper, .walletWrapper {
+  display: flex;
+  margin: 15px;
+}
+
+.userWrapper > div, .walletWrapper > div, .wrapper {
+  line-height: 30px;
+}

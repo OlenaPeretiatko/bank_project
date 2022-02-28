@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/styles.css" rel="stylesheet">
+    <title>Title</title>
+</head>
+<body>
+<header class="fixedHeader">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="users.html">Users</a></li>
+            <li class="active"><a href="wallets.html">Wallets</a></li>
+            <li><a href="transactionPost.html">Transactions</a></li>
+            <li class="right"><a href="profile.html">Profile</a></li>
+            <li class="right"><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="content center">
+    <h1 class="title">CREATE WALLET</h1>
+
+    <form method="post">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name"
+                   placeholder="Name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Funds</label>
+            <input type="text" name="funds"
+                   placeholder="Post funds" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Owner Id</label>
+            <input type="text" name="owner_id"
+                   placeholder="Post owner_id" class="form-control">
+        </div>
+        <div class="form-group center">
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </form>
+</main>
+<footer>
+    <hr>
+    <span class="footerText">&copy; 2022 Roman Bilets</span>
+    <nav class="navigation">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Vacancies</a>
+        <a href="#">Shop</a>
+    </nav>
+</footer>
+</body>
+</html>

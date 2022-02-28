@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body id="loginImg">
+    <header class="fixedHeader">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="users.html">Users</a></li>
+                <li><a href="wallets.html">Wallets</a></li>
+                <li><a href="transactionPost.html">Transactions</a></li>
+                <li class="right"><a href="profile.html">Profile</a></li>
+                <li class="right active"><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="login">
+            <div class="center">
+                <h1>Login</h1>
+
+                <form method="POST" action="/login">
+                    <div>
+                        <input type="text" name="username" placeholder="Your username" autofocus="">
+                    </div>
+                    <div>
+                        <input type="password" name="password" placeholder="Your Password">
+                    </div>
+                    <div class="center">
+                        <button>Login</button>
+                    </div>
+                </form>
+                <p>Don't have account? <a href="register.html">Register</a></p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footerWhite">
+        <hr>
+        <span class="footerText">&copy; 2022 Roman Bilets</span>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Vacancies</a>
+            <a href="#">Shop</a>
+        </nav>
+    </footer>
+</body>
+</html>

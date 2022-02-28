@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  margin-bottom: 70px;
+  min-height: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  position: relative;
+  color: #423b3c; }
+
+body {
+  background-color: #e4e3e4;
+  font-family: 'Times New Roman', sans-serif; }
+
+header {
+  position: relative;
+  margin: 0; }
+
+main {
+  font-size: 17px; }
+
+header a {
+  color: white;
+  text-transform: uppercase; }
+
+a {
+  text-decoration: none; }
+
+div.form-group {
+  margin: 5px 0; }
+
+nav ul li {
+  float: left;
+  list-style: none;
+  margin: 0 20px;
+  padding: 20px; }
+
+.right {
+  float: right; }
+
+.right a {
+  margin-right: 20px; }
+
+.active a {
+  color: #f34b70; }
+
+form {
+  display: inline-block; }
+
+button > a {
+  color: #f04977; }
+
+button, input[type="submit"] {
+  margin: 10px 0 10px 10px;
+  border-width: 4px;
+  border-style: solid;
+  border-image: linear-gradient(to right, #f34b70, #fd6748) 3;
+  padding: 10px 15px;
+  color: #f34b70;
+  font-family: "Noto Sans Cham", sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px; }
+
+label {
+  margin-top: 15px;
+  display: inline-block;
+  width: 350px;
+  font-weight: 700; }
+
+input[type="text"], input[type="password"] {
+  color: #263238;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  width: 300px;
+  outline: none;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  text-align: center;
+  margin-bottom: 27px; }
+
+footer {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+  font-size: 18px; }
+
+footer > .navigation > a {
+  float: right;
+  color: #54605d;
+  padding: 1%; }
+
+.footerText {
+  float: left;
+  padding: 1%;
+  color: #423b3c; }
+
+footer, .content {
+  margin-top: 5%;
+  padding: 0 2%; }
+
+h1 {
+  margin-bottom: 20px; }
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.fixedHeader {
+  height: 60px; }
+
+.myBtnsRight {
+  margin-left: auto;
+  order: 2; }
+
+.wrapper {
+  margin: 10px; }
+
+.footerWhite > .footerText, .footerWhite > .navigation > a {
+  color: white; }
+
+.wallet {
+  margin: 10px auto;
+  padding: 30px;
+  background-color: #242582;
+  color: white;
+  width: 380px;
+  height: 220px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px gray;
+  border: 1px solid black; }
+
+.wallet:nth-child(odd) {
+  background-color: #fd351b; }
+
+footer, #profileImg {
+  margin-top: 0; }
+
+.cardNum {
+  font-family: 'Courier New', monospace;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 60px auto;
+  text-align: center; }
+
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  height: 100px;
+  background-size: cover;
+  float: right; }
+
+.cardUser, .walletMoney {
+  letter-spacing: 1px;
+  font-family: 'Courier New', monospace; }
+
+.cardUser {
+  float: left; }
+
+.walletName {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  margin: 0; }
+
+.profile {
+  margin: 10% 7%;
+  font-size: 18px;
+  line-height: 1.8;
+  padding: 5%; }
+
+#profileHeader {
+  display: flex;
+  flex-direction: column; }
+
+#imgProfile {
+  color: white;
+  background: linear-gradient(rgba(31, 34, 44, 0.63), rgba(26, 28, 37, 0.22)), url("/img/photo8.jpg") center;
+  min-height: 700px;
+  background-size: cover; }
+
+#imgProfile > div {
+  justify-content: center;
+  align-items: center; }
+
+.profileWrapper {
+  display: flex; }
+
+.wallets {
+  margin: 8% auto;
+  display: flex;
+  flex-direction: column; }
+
+.profileWrapper > div {
+  width: 50%; }
+
+.userWrapper, .walletWrapper {
+  display: flex;
+  margin: 15px; }
+
+.userWrapper > div, .walletWrapper > div, .wrapper {
+  line-height: 30px; }

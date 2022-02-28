@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+<header class="fixedHeader">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="users.html">Users</a></li>
+            <li><a href="wallets.html">Wallets</a></li>
+            <li class="active"><a href="transactionPost.html">Transactions</a></li>
+            <li class="right"><a href="profile.html">Profile</a></li>
+            <li class="right"><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="content center">
+    <h1>CREATE TRANSACTION</h1>
+    <form method="post">
+        <div>
+            <label>Please, enter your card number: </label>
+            <input type="text" name="from_wallet_id"
+                   placeholder="Card number" class="form-control">
+        </div>
+        <div>
+            <label>Please, enter the receiver`s card number: </label>
+            <input type="text" name="to_wallet_id"
+                   placeholder="Card number" class="form-control">
+        </div>
+        <div>
+            <label>Please, enter amount of money you want to send: </label>
+            <input type="text" name="amount"
+                   placeholder="Amount" class="form-control">
+            <div class="center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+    <p><a href="transactions.html">See all Transactions</a></p>
+</main>
+<footer>
+    <hr>
+    <span class="footerText">&copy; 2022 Roman Bilets</span>
+    <nav class="navigation">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Vacancies</a>
+        <a href="#">Shop</a>
+    </nav>
+</footer>
+</body>
+</html>

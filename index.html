@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link href="css/styles.css" rel="stylesheet">
+        <link href="css/home.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<header id="imgHome">
+    <nav>
+        <ul>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="users.html">Users</a></li>
+            <li><a href="wallets.html">Wallets</a></li>
+            <li><a href="transactionPost.html">Transactions</a></li>
+            <li class="right"><a href="profile.html">Profile</a></li>
+            <li class="right"><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <div class="textWhite">
+        <h1>Community banking with a personal touch. </h1>
+        <p>We offer industry-leading rates, truly personalized service, incredible convenience
+            and the latest in technology, all to help make your banking better.</p>
+    </div>
+</header>
+<main>
+    <div class="content">
+        <div class="wallet">
+            <p class="walletName">{{wallet.name}}</p>
+            <p class="cardNum">{{wallet.uid}}</p>
+            <p class="walletMoney">Money: {{wallet.funds}}</p>
+            <p class="cardUser">{{current_user.first_name}} {{current_user.last_name}}</p>
+            <p class="montserrat">VISA</p>
+        </div>
+    </div>
+</main>
+<footer>
+    <hr>
+    <span class="footerText">&copy; 2022 Roman Bilets</span>
+    <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="users.html">Users</a>
+        <a href="wallets.html">Wallets</a>
+        <a href="transactions.html">Transactions</a>
+    </nav>
+</footer>
+
+</body>
+</html>

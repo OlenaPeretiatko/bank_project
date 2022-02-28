@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+<header class="fixedHeader">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="users.html">Users</a></li>
+            <li><a href="wallets.html">Wallets</a></li>
+            <li><a href="transactionPost.html">Transactions</a></li>
+            <li class="right"><a href="profile.html">Profile</a></li>
+            <li class="right"><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+</header >
+<main>
+<div class="content">
+    <div class="userWrapper">
+        <div>
+            <a href="users/{{user['username']}}">
+                <h2>{{ user['username'] }}</h2>
+            </a>
+            <p>First Name: {{user.first_name}}</p>
+            <p>Last Name: {{user.last_name}}</p>
+            <p>Email: {{user.email}}</p>
+        </div>
+        <div class="myBtnsRight">
+            <a href="update.html">
+                <button>Edit</button>
+            </a>
+            <form action="deleteUser/{{user['username']}}" method="POST">
+                <input type="submit" value="Delete User"
+                       class="btn btn-danger btn-sm">
+            </form>
+        </div>
+    </div>
+    <hr>
+    <div class="center">
+        <button><a href="addUser.html">Add User</a></button>
+    </div>
+</div>
+</main>
+<footer>
+    <hr>
+    <span class="footerText">&copy; 2022 Roman Bilets</span>
+    <nav class="navigation">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Vacancies</a>
+        <a href="#">Shop</a>
+    </nav>
+</footer>
+</body>
+
+</html>
