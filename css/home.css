@@ -128,7 +128,7 @@ h1 {
 #imgHome {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(rgba(42, 46, 63, 0.57), rgba(32, 35, 47, 0.47)), url("/img/photo4.jpg") center;
+  background: linear-gradient(rgba(42, 46, 63, 0.57), rgba(32, 35, 47, 0.47)), url("https://olenaperetiatko.github.io/bank_project_lab_1/img/photo4.jpg") center;
   height: 800px;
   background-size: cover; }
 

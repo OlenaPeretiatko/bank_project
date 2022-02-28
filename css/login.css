@@ -146,7 +146,7 @@ input {
   align-items: center; }
 
 #loginImg {
-  background: linear-gradient(rgba(31, 34, 44, 0.6), rgba(26, 28, 37, 0.3)), url("/img/photo5.jpg") center;
+  background: linear-gradient(rgba(31, 34, 44, 0.6), rgba(26, 28, 37, 0.3)), url("https://olenaperetiatko.github.io/bank_project_lab_1/img/photo5.jpg") center;
   background-size: cover; }
 
 footer {
