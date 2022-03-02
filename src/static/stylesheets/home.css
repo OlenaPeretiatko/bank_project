@@ -1,7 +1,9 @@
-#img{
+#imgHome{
+    display: flex;
+    flex-direction: column;
     background: linear-gradient( rgba(42, 46, 63, 0.57), rgba(32, 35, 47, 0.47)),
     url("../images/photo4.jpg") center;
-    height: 700px;
+    height: 800px;
     background-size: cover;
 }
 .textWhite{
@@ -14,11 +16,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-family: 'Optima', sans-serif;
-}
-
-.getStudents{
-    margin: auto;
+    font-family: 'Optima', sans-serif; !important;
 }
 
 

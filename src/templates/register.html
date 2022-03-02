@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="{{ url_for('static', filename='stylesheets/styles.css') }}" rel="stylesheet">
-    <!--    <link href="/src/static/stylesheets/styles.css" rel="stylesheet">-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Title</title>
 </head>
 <body>
-<header>
+<header class="fixedHeader">
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
@@ -68,5 +74,14 @@
         </div>
     </form>
 </main>
+<footer>
+    <span class="footerText">&copy; 2022 Olena Peretiatko</span>
+    <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="users.html">Users</a>
+        <a href="wallets.html">Wallets</a>
+        <a href="transactions.html">Transactions</a>
+    </nav>
+</footer>
 </body>
 </html>
