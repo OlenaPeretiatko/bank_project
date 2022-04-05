@@ -5,7 +5,9 @@
     <link href="{{ url_for('static', filename='stylesheets/home.css') }}" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -14,7 +16,7 @@
 <body id="imgProfile">
 <header id="profileHeader">
     <nav class="navbar navbar-light">
-        <div class="container-fluid">
+        <div class="container-fluid" id="home">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     {% if current_user.is_admin %}
@@ -28,7 +30,7 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="/users">Users</a></li>
                     <li><a href="/wallets">Wallets</a></li>
                     {% if current_user.is_authenticated %}
@@ -38,7 +40,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if current_user.is_authenticated %}
-                    <li><a href="/profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+                    <li class="active"><a href="/profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
                     {% endif %}
                     {% if current_user.is_authenticated == False %}
                     <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -94,10 +96,10 @@
 <footer class="footerWhite">
     <span class="footerText">&copy; 2022 Olena Peretiatko</span>
     <nav class="navigation">
-        <a href="index.html">Home</a>
-        <a href="users.html">Users</a>
-        <a href="wallets.html">Wallets</a>
-        <a href="transactions.html">Transactions</a>
+        <a href="/">Home</a>
+        <a href="/users">Users</a>
+        <a href="/wallets">Wallets</a>
+        <a href="/transactions">Transactions</a>
     </nav>
 </footer>
 </body>

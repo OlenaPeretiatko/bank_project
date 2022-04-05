@@ -1,4 +1,5 @@
 from functools import wraps
+import json
 
 from flask import request, g, render_template, make_response, url_for
 from flask_httpauth import HTTPBasicAuth
@@ -54,11 +55,13 @@ class WalletListApiPost(Resource):
 
     @login_required
     def post(self):
+        d = json.loads(json.dumps(request.get_json()))
+        print(d)
         try:
             wallet = Wallet(
-                name=request.form['name'],
-                funds=request.form['funds'],
-                owner_id=request.form['owner_id']
+                name=d['name'],
+                funds=d['funds'],
+                owner_id=d['owner_id']
             )
             if not db.session.query(User).filter_by(uid=wallet.owner_id).first():
                 return {'message': 'Wrong data, User(owner_id) not found'}, 400

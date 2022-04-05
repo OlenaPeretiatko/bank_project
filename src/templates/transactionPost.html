@@ -12,7 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Title</title>
 </head>
-<header class="fixedHeader">
+<header>
     <nav class="navbar navbar-light">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -28,11 +28,11 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="/users">Users</a></li>
                     <li><a href="/wallets">Wallets</a></li>
                     {% if current_user.is_authenticated %}
-                    <li><a href="/transactionsPost">Transactions</a></li>
+                    <li class="active"><a href="/transactionsPost">Transactions</a></li>
                     {% endif %}
 
                 </ul>
@@ -51,7 +51,7 @@
 </header>
 <body>
 <main>
-    <div id="form">
+    <div id="form" class="content">
     <h1>CREATE TRANSACTION</h1>
     <form method="post">
         <div class="form-group">
@@ -79,10 +79,10 @@
 <footer>
     <span class="footerText">&copy; 2022 Olena Peretiatko</span>
     <nav class="navigation">
-        <a href="index.html">Home</a>
-        <a href="users.html">Users</a>
-        <a href="wallets.html">Wallets</a>
-        <a href="transactions.html">Transactions</a>
+        <a href="/">Home</a>
+        <a href="/users">Users</a>
+        <a href="/wallets">Wallets</a>
+        <a href="/transactions">Transactions</a>
     </nav>
 </footer>
 </body>

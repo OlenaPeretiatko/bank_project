@@ -13,9 +13,9 @@
     <title>Title</title>
 </head>
 <body>
-<header class="fixedHeader">
+<header>
     <nav class="navbar navbar-light">
-        <div class="container-fluid">
+        <div class="container-fluid" id="home">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     {% if current_user.is_admin %}
@@ -29,9 +29,9 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="/users">Users</a></li>
-                    <li><a href="/wallets">Wallets</a></li>
+                    <li class="active"><a href="/wallets">Wallets</a></li>
                     {% if current_user.is_authenticated %}
                     <li><a href="/transactionsPost">Transactions</a></li>
                     {% endif %}
@@ -70,20 +70,22 @@
         </div>
         <hr>
         {% endfor %}
+        {% if current_user.is_admin %}
         <div class="center">
             <a href="walletCreate">
                 <button>Add Wallet</button>
             </a>
         </div>
+        {% endif %}
     </div>
 </main>
 <footer>
     <span class="footerText">&copy; 2022 Olena Peretiatko</span>
     <nav class="navigation">
-        <a href="index.html">Home</a>
-        <a href="users.html">Users</a>
-        <a href="wallets.html">Wallets</a>
-        <a href="transactions.html">Transactions</a>
+        <a href="/">Home</a>
+        <a href="/users">Users</a>
+        <a href="/wallets">Wallets</a>
+        <a href="/transactions">Transactions</a>
     </nav>
 </footer>
 </body>

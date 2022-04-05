@@ -69,26 +69,6 @@ class UserListApiPost(Resource):
 class UserListApiUpdate(Resource):
     user_schema = UserSchema()
 
-    # @login_required
-    # def put(self, username):
-    #     if not current_user.is_admin and current_user.username != username:
-    #         return {'message': 'Access denied'}, 409
-    #     user = db.session.query(User).filter_by(username=username).first()
-    #     if not user:
-    #         return {'message': 'User not found'}, 404
-    #     try:
-    #         user = self.user_schema.load(request.json, instance=user, session=db.session)
-    #         if isinstance(user.password, str):
-    #             user.password = generate_password_hash(user.password)
-    #     except ValidationError as e:
-    #         return {'message': str(e)}, 400
-    #     try:
-    #         db.session.add(user)
-    #         db.session.commit()
-    #     except IntegrityError:
-    #         db.session.rollback()
-    #         return {'message': 'Such user exists'}, 409
-    #     return self.user_schema.dump(user), 200
     @login_required
     def get(self, username):
         if not current_user.is_admin and current_user.username != username:

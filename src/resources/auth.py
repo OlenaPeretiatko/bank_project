@@ -1,4 +1,5 @@
 import datetime
+import json
 
 from flask import request, jsonify, g, make_response, render_template, url_for
 from flask_login import LoginManager, current_user, login_user, login_required, logout_user
@@ -38,13 +39,15 @@ class AuthRegister(Resource):
 
     def post(self):
         try:
+            d = json.loads(json.dumps(request.get_json()))
             user = User(
-                username=request.form['username'],
-                first_name=request.form['first_name'],
-                last_name=request.form['last_name'],
-                email=request.form['email'],
-                password=request.form['password']
+                username=d['username'],
+                first_name=d['first_name'],
+                last_name=d['last_name'],
+                email=d['email'],
+                password=d['password']
             )
+            print(user)
         except ValidationError as e:
             return {'message': str(e)}, 400
         try:
@@ -53,7 +56,7 @@ class AuthRegister(Resource):
         except IntegrityError:
             db.session.rollback()
             return {'message': 'Such user exists'}, 409
-        return self.user_schema.dump(user)
+        return make_response(render_template('login.html'), 200, headers)
 
 
 class AuthLogin(Resource):
@@ -61,9 +64,11 @@ class AuthLogin(Resource):
         return make_response(render_template('login.html'), 200, headers)
 
     def post(self):
-        username = request.form.get('username')
-        password = request.form.get('password')
+        d = json.loads(json.dumps(request.get_json()))
+        username = d['username']
+        password = d['password']
         user = db.session.query(User).filter_by(username=username).first()
+        print(user)
         wallets = db.session.query(Wallet).filter_by(owner_id=user.uid).all()
 
         if verify_password(username, password):
@@ -80,7 +85,6 @@ class Profile(Resource):
     def get(self):
         wallets = db.session.query(Wallet).filter_by(owner_id=current_user.uid).all()
         return make_response(render_template('profile.html', user=current_user, wallets=wallets), 200, headers)
-
 
 class AuthLogout(Resource):
     @login_required
