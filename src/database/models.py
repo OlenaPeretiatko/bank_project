@@ -41,6 +41,14 @@ class User(Base, UserMixin):
     def __repr__(self):
         return f"User({self.email}, {self.username}, {self.first_name}, {self.last_name})"
 
+    def __str__(self):
+        return f"User ID       : {self.uid}\n" \
+               f"Email         : {self.email}\n" \
+               f"Username         : {self.username}\n" \
+               f"Password      : {self.password}\n" \
+               f"First Name    : {self.first_name}\n" \
+               f"Last Name     : {self.last_name}\n"
+
 
 class Wallet(Base):
     __tablename__ = 'wallets'
